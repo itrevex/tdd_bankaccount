@@ -1,1 +1,3 @@
-{}
+{
+  "basic_pytest_usage/test_wallet.py": true
+}
