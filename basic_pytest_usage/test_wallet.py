@@ -4,10 +4,16 @@ from wallet import Wallet, InsufficientBalance
 
 @pytest.fixture
 def empty_wallet():
+    """
+    Returns empty wallet with balance =0
+    """
     return Wallet()
 
 @pytest.fixture
 def wallet():
+    """
+    Returns  wallet with a balance of 20
+    """
     return Wallet(50)
 
 def test_default_initial_balance(empty_wallet):
