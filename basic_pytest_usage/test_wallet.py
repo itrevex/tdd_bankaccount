@@ -33,3 +33,12 @@ def test_wallet_spend_cash(wallet):
 def test_wallet_spend_cash_raises_insufficient_balance_exception(empty_wallet):
     with pytest.raises(InsufficientBalance):
         empty_wallet.spend_cash(100)
+
+@pytest.mark.parametrize("earned, spent, expected",[(10,10,0),(50,20,30)])
+
+def test_transactions(wallet, earned, spent, expected):
+    wallet = Wallet()
+    wallet.add_cash(earned)
+    wallet.spend_cash(spent)
+    assert wallet.balance == expected
+
